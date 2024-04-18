@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Palindrome</h2>
+        <div class="inputdiv">
+            <input type="text" id="input">
+            
+        </div>
+        <div>
+            <button type="submit" onclick="checker()">Check</button>
+        </div>
+        <div id="result">
+            
+        </div>
+    </div>
+    <script>
+         function checker()
+        {
+         let word = document.getElementById("input").value;
+         let result = document.getElementById("result");
+         word = word.toLowerCase();
+         word = word.replace(/[^a-z]/g,"");
+         let final ="";
+         for(let i=word.length-1;i>=0;i--)
+         {
+            final+=word[i];
+         }
+         if(word===final)
+         {
+            result.innerHTML = "Palindrome";
+         }
+         else{
+         result.innerHTML = "Not a Palindrome";
+         }
+        }
+    
+        
+
+    </script>
+</body>
+</html>
